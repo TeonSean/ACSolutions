@@ -4,9 +4,6 @@
  * [38] Count and Say
  */
 class Solution {
-public:
-    string countAndSay(int n) {
-        
-    }
+ public:
+  string countAndSay(int n) { string str = "1"; }
 };
-
