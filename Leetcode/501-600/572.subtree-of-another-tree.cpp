@@ -15,7 +15,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   vector<TreeNode *> candidates;
 
   int getDepth(TreeNode *root, int target) {

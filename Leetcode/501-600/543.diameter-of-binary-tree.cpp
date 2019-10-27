@@ -15,7 +15,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   int cur_max;
 
   int Visit(TreeNode *node) {

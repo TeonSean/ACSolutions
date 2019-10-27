@@ -6,7 +6,7 @@
 
 // @lc code=start
 class Solution {
-public:
+ public:
   string reverseWords(string s) {
     int begin = 0;
     while (begin < s.size()) {

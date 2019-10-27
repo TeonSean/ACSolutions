@@ -6,7 +6,7 @@
 
 // @lc code=start
 class Solution {
-public:
+ public:
   vector<vector<int>> matrixReshape(vector<vector<int>> &nums, int r, int c) {
     int cnt = r * c;
     if (nums.size() * nums[0].size() != cnt) {

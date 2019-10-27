@@ -4,16 +4,15 @@
  * [217] Contains Duplicate
  */
 class Solution {
-public:
-    bool containsDuplicate(vector<int>& nums) {
-        set<int> s;
-        for (auto n: nums) {
-            if (s.count(n)) {
-                return true;
-            }
-            s.insert(n);
-        }
-        return false;
+ public:
+  bool containsDuplicate(vector<int>& nums) {
+    set<int> s;
+    for (auto n : nums) {
+      if (s.count(n)) {
+        return true;
+      }
+      s.insert(n);
     }
+    return false;
+  }
 };
-

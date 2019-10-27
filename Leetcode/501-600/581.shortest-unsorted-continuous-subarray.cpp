@@ -6,7 +6,7 @@
 
 // @lc code=start
 class Solution {
-public:
+ public:
   int findUnsortedSubarray(vector<int> &nums) {
     int min_unordered = -1;
     int max_unordered = -1;

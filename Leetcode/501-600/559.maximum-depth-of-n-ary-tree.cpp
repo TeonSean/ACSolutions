@@ -21,7 +21,7 @@ public:
 };
 */
 class Solution {
-public:
+ public:
   int maxDepth(Node *root) {
     if (root == nullptr) {
       return 0;

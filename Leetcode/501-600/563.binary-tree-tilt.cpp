@@ -15,7 +15,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   int findTilt(TreeNode *root, int &sum) {
     if (root == nullptr) {
       return 0;

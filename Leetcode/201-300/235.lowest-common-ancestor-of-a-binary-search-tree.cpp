@@ -13,19 +13,17 @@
  * };
  */
 class Solution {
-public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        TreeNode* node = root;
-        while (true) {
-            int diffp = node->val - p->val;
-            int diffq = node->val - q->val;
-            if (diffp * diffq <= 0) {
-                return node;
-            }
-            else {
-                node = diffp > 0 ? node->left : node->right;
-            }
-        }
+ public:
+  TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+    TreeNode* node = root;
+    while (true) {
+      int diffp = node->val - p->val;
+      int diffq = node->val - q->val;
+      if (diffp * diffq <= 0) {
+        return node;
+      } else {
+        node = diffp > 0 ? node->left : node->right;
+      }
     }
+  }
 };
-

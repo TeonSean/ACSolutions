@@ -13,23 +13,21 @@
  * };
  */
 class Solution {
-public:
-    bool check(TreeNode* node, int sum) {
-        if (node->left == nullptr) {
-            if (node->right == nullptr) {
-                return sum == node->val;
-            }
-            else {
-                return check(node->right, sum - node->val);
-            }
-        }
-        else {
-            return check(node->left, sum - node->val) || (node->right != nullptr && check(node->right, sum - node->val));
-        }
+ public:
+  bool check(TreeNode* node, int sum) {
+    if (node->left == nullptr) {
+      if (node->right == nullptr) {
+        return sum == node->val;
+      } else {
+        return check(node->right, sum - node->val);
+      }
+    } else {
+      return check(node->left, sum - node->val) ||
+             (node->right != nullptr && check(node->right, sum - node->val));
     }
+  }
 
-    bool hasPathSum(TreeNode* root, int sum) {
-        return root != nullptr && check(root, sum);
-    }
+  bool hasPathSum(TreeNode* root, int sum) {
+    return root != nullptr && check(root, sum);
+  }
 };
-

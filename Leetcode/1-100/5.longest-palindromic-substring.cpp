@@ -4,11 +4,10 @@
  * [5] Longest Palindromic Substring
  */
 class Solution {
-public:
-    string longestPalindrome(string s) {
-        if(s.size() <= 1) {
-            return s;
-        }
+ public:
+  string longestPalindrome(string s) {
+    if (s.size() <= 1) {
+      return s;
     }
+  }
 };
-

@@ -13,23 +13,22 @@
  * };
  */
 class Solution {
-public:
-    void traverse(TreeNode* node, int cur, int& max_depth) {
-        max_depth = max(cur, max_depth);
-        if (node->left != nullptr) {
-            traverse(node->left, cur + 1, max_depth);
-        }
-        if (node->right != nullptr) {
-            traverse(node->right, cur + 1, max_depth);
-        }
+ public:
+  void traverse(TreeNode* node, int cur, int& max_depth) {
+    max_depth = max(cur, max_depth);
+    if (node->left != nullptr) {
+      traverse(node->left, cur + 1, max_depth);
     }
+    if (node->right != nullptr) {
+      traverse(node->right, cur + 1, max_depth);
+    }
+  }
 
-    int maxDepth(TreeNode* root) {
-        int md = 0;
-        if (root != nullptr) {
-            traverse(root, 1, md);
-        }
-        return md;
+  int maxDepth(TreeNode* root) {
+    int md = 0;
+    if (root != nullptr) {
+      traverse(root, 1, md);
     }
+    return md;
+  }
 };
-

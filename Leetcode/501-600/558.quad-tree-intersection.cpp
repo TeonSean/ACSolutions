@@ -26,7 +26,7 @@ _bottomRight;
 };
 */
 class Solution {
-public:
+ public:
   Node *intersect(Node *quadTree1, Node *quadTree2) {
     if (quadTree1->isLeaf) {
       return quadTree1->val ? quadTree1 : quadTree2;

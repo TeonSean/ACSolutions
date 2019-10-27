@@ -6,7 +6,7 @@
 
 // @lc code=start
 class Solution {
-public:
+ public:
   int arrayPairSum(vector<int> &nums) {
     sort(nums.begin(), nums.end());
     int cnt = 0;

@@ -13,24 +13,21 @@
  * };
  */
 class Solution {
-public:
-    int tryDepth(TreeNode* node) {
-        if (node == nullptr) {
-            return 0;
-        }
-        int left = tryDepth(node->left);
-        if (left < 0) {
-            return -1;
-        }
-        int right = tryDepth(node->right);
-        if (right < 0 || abs(left - right) > 1) {
-            return -1;
-        }
-        return max(left, right) + 1;
+ public:
+  int tryDepth(TreeNode* node) {
+    if (node == nullptr) {
+      return 0;
     }
+    int left = tryDepth(node->left);
+    if (left < 0) {
+      return -1;
+    }
+    int right = tryDepth(node->right);
+    if (right < 0 || abs(left - right) > 1) {
+      return -1;
+    }
+    return max(left, right) + 1;
+  }
 
-    bool isBalanced(TreeNode* root) {
-        return tryDepth(root) >= 0;
-    }
+  bool isBalanced(TreeNode* root) { return tryDepth(root) >= 0; }
 };
-

@@ -13,32 +13,30 @@
  * };
  */
 class Solution {
-public:
-    void tryLeaf(TreeNode* node, int& sum, bool is_left) {
-        if (node->left == nullptr) {
-            if (node->right == nullptr) {
-                if (is_left) {
-                    sum += node->val;
-                }
-                return;
-            }
-            tryLeaf(node->right, sum, false);
+ public:
+  void tryLeaf(TreeNode* node, int& sum, bool is_left) {
+    if (node->left == nullptr) {
+      if (node->right == nullptr) {
+        if (is_left) {
+          sum += node->val;
         }
-        else {
-            tryLeaf(node->left, sum, true);
-            if (node->right != nullptr) {
-                tryLeaf(node->right, sum, false);
-            }
-        }
+        return;
+      }
+      tryLeaf(node->right, sum, false);
+    } else {
+      tryLeaf(node->left, sum, true);
+      if (node->right != nullptr) {
+        tryLeaf(node->right, sum, false);
+      }
     }
+  }
 
-    int sumOfLeftLeaves(TreeNode* root) {
-        if (root == nullptr) {
-            return 0;
-        }
-        int sum = 0;
-        tryLeaf(root, sum, false);
-        return sum;
+  int sumOfLeftLeaves(TreeNode* root) {
+    if (root == nullptr) {
+      return 0;
     }
+    int sum = 0;
+    tryLeaf(root, sum, false);
+    return sum;
+  }
 };
-

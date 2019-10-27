@@ -6,7 +6,7 @@
 
 // @lc code=start
 class Solution {
-public:
+ public:
   int distributeCandies(vector<int> &candies) {
     bitset<200001> hash;
     for (int i : candies) {

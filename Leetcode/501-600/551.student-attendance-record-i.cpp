@@ -6,7 +6,7 @@
 
 // @lc code=start
 class Solution {
-public:
+ public:
   bool checkRecord(string s) {
     int A_cnt = 0;
     int L_cnt = 0;

@@ -13,35 +13,32 @@
  * };
  */
 class Solution {
-public:
-    void traverse(TreeNode* node, int cur, int& min_depth) {
-        if (cur >= min_depth) {
-            return;
-        }
-        if (node->left == nullptr) {
-            if (node->right == nullptr) {
-                min_depth = min(cur, min_depth);
-                return;
-            }
-            else {
-                traverse(node->right, cur + 1, min_depth);
-            }
-        }
-        else {
-            traverse(node->left, cur + 1, min_depth);
-            if (node->right != nullptr) {
-                traverse(node->right, cur + 1, min_depth);
-            }
-        }
+ public:
+  void traverse(TreeNode* node, int cur, int& min_depth) {
+    if (cur >= min_depth) {
+      return;
     }
+    if (node->left == nullptr) {
+      if (node->right == nullptr) {
+        min_depth = min(cur, min_depth);
+        return;
+      } else {
+        traverse(node->right, cur + 1, min_depth);
+      }
+    } else {
+      traverse(node->left, cur + 1, min_depth);
+      if (node->right != nullptr) {
+        traverse(node->right, cur + 1, min_depth);
+      }
+    }
+  }
 
-    int minDepth(TreeNode* root) {
-        if (root == nullptr) {
-            return 0;
-        }
-        int md = INT_MAX;
-        traverse(root, 1, md);
-        return md;
+  int minDepth(TreeNode* root) {
+    if (root == nullptr) {
+      return 0;
     }
+    int md = INT_MAX;
+    traverse(root, 1, md);
+    return md;
+  }
 };
-

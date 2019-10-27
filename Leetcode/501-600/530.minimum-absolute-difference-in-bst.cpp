@@ -15,27 +15,26 @@
  * };
  */
 class Solution {
-public:
-    int prev = -1;
-    int min_diff;
+ public:
+  int prev = -1;
+  int min_diff;
 
-    void visit(TreeNode* node) {
-        if (node == nullptr) {
-            return;
-        }
-        visit(node->left);
-        if (prev >= 0) {
-            min_diff = min(min_diff, node->val - prev);
-        }
-        prev = node->val;
-        visit(node->right);
+  void visit(TreeNode* node) {
+    if (node == nullptr) {
+      return;
     }
+    visit(node->left);
+    if (prev >= 0) {
+      min_diff = min(min_diff, node->val - prev);
+    }
+    prev = node->val;
+    visit(node->right);
+  }
 
-    int getMinimumDifference(TreeNode* root) {
-        min_diff = INT_MAX;
-        visit(root);
-        return min_diff;
-    }
+  int getMinimumDifference(TreeNode* root) {
+    min_diff = INT_MAX;
+    visit(root);
+    return min_diff;
+  }
 };
 // @lc code=end
-

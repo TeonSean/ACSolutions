@@ -15,22 +15,21 @@
  * };
  */
 class Solution {
-public:
-    int visit(TreeNode* node, int sum) {
-        if (node == nullptr) {
-            return 0;
-        }
-        return visit(node->left, sum - node->val) + 
-            visit(node->right, sum - node->val) + 
-            (node->val == sum ? 1 : 0);
+ public:
+  int visit(TreeNode* node, int sum) {
+    if (node == nullptr) {
+      return 0;
     }
+    return visit(node->left, sum - node->val) +
+           visit(node->right, sum - node->val) + (node->val == sum ? 1 : 0);
+  }
 
-    int pathSum(TreeNode* root, int sum) {
-        if (root == nullptr) {
-            return 0;
-        }
-        return visit(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
+  int pathSum(TreeNode* root, int sum) {
+    if (root == nullptr) {
+      return 0;
     }
+    return visit(root, sum) + pathSum(root->left, sum) +
+           pathSum(root->right, sum);
+  }
 };
 // @lc code=end
-

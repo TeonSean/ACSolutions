@@ -12,22 +12,21 @@
  * };
  */
 class Solution {
-public:
-    ListNode* deleteDuplicates(ListNode* head) {
-        if (head == nullptr) {
-            return nullptr;
-        }
-        auto cur = head->next;
-        auto last = head;
-        while (cur) {
-            if (cur->val != last->val) {
-                last->next = cur;
-                last = cur;
-            }
-            cur = cur->next;
-        }
-        last->next = nullptr;
-        return head;
+ public:
+  ListNode* deleteDuplicates(ListNode* head) {
+    if (head == nullptr) {
+      return nullptr;
     }
+    auto cur = head->next;
+    auto last = head;
+    while (cur) {
+      if (cur->val != last->val) {
+        last->next = cur;
+        last = cur;
+      }
+      cur = cur->next;
+    }
+    last->next = nullptr;
+    return head;
+  }
 };
-

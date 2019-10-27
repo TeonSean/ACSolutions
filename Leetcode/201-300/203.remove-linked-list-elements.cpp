@@ -12,26 +12,24 @@
  * };
  */
 class Solution {
-public:
-    ListNode* removeElements(ListNode* head, int val) {
-        while (head && head->val == val) {
-            head = head->next;
-        }
-        if (head == nullptr) {
-            return nullptr;
-        }
-        ListNode* prev = head;
-        ListNode* cur = head->next;
-        while (cur) {
-            if (cur->val == val) {
-                prev->next = cur->next;
-            }
-            else {
-                prev = cur;
-            }
-            cur = cur->next;
-        }
-        return head;
+ public:
+  ListNode* removeElements(ListNode* head, int val) {
+    while (head && head->val == val) {
+      head = head->next;
     }
+    if (head == nullptr) {
+      return nullptr;
+    }
+    ListNode* prev = head;
+    ListNode* cur = head->next;
+    while (cur) {
+      if (cur->val == val) {
+        prev->next = cur->next;
+      } else {
+        prev = cur;
+      }
+      cur = cur->next;
+    }
+    return head;
+  }
 };
-
